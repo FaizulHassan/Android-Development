@@ -46,7 +46,13 @@ font-family: calibri;
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  margin:auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  
 }
 
 @-webkit-keyframes spin {
@@ -98,7 +104,7 @@ myImage.onclick = function() {
 var myVar;
 
 function myFunction() {
-    myVar = setTimeout(showPage, 1000);
+    myVar = setTimeout(showPage, 2000);
 }
 
 function showPage() {
