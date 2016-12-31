@@ -34,7 +34,7 @@ font-family: calibri;
 <h2></h2>
 
 <div class="card" id="Test-1">
-  <img src="res/images/index-img.jpg" height="250px" alt="Avatar" style="width:100%">
+  <img src="res/images/index-img.jpg" id="img-1" height="250px" alt="Avatar" style="width:100%">
   <div class="container">
     <h4><b>Juvai Farhana</b></h4> 
     <p>Web Designer</p> 
@@ -48,13 +48,22 @@ font-family: calibri;
     <p>Software Engineer</p> 
   </div>
 </div>
+
 <script>
-$(document).ready(function(){
-    $("#Test-1").click(function(){
-		alert("HelloWorld");
-		$("#Test-2").css("display","block")
-    });
-});
+
+document.getElementById('Test-1').onclick = function(){
+	var imgs = document.getElementById('img-1');
+	if(imgs.src=='res/images/index-img.jpg')
+	{
+		imgs.src='res/images/index-img1.jpg';
+		alert(1);
+	}
+	else
+	{
+		imgs.src='res/images/index-img.jpg';
+		alert(2);
+	}
+}
 </script>
 </body>
 </html> 
