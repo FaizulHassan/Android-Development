@@ -5,6 +5,13 @@
 <script src="script/jquery-3.1.1.min.js"></script>
 
 <style>
+
+.header{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	width: 100%;
+	padding: 20px 0 20px 0;
+	text-align: center;
+}
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -22,10 +29,34 @@ img {
 
 .container {
     padding: 2px 16px;
+	text-align: center;
 }
 
 body{
 font-family: calibri;
+}
+
+</style>
+<style>
+.loadersmall {
+  border: 5px solid #f3f3f3;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+  border-top: 5px solid #555;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin:auto;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
 </head>
@@ -33,37 +64,53 @@ font-family: calibri;
 
 <h2></h2>
 
-<div class="card" id="Test-1">
-  <img src="res/images/index-img.jpg" id="img-1" height="250px" alt="Avatar" style="width:100%">
+<div class="loadersmall" id="myLoader"></div>
+
+<div class="card" id="myContainer" style="display:none">
+<div class="header">H E L L O W O R L D</div>
+  <img src="res/images/index-img.jpg" id="img-1" height="250px" alt="Author" style="width:100%">
   <div class="container">
     <h4><b>Juvai Farhana</b></h4> 
     <p>Web Designer</p> 
   </div>
 </div>
-<br><br>
-<div class="card" id="Test-2" style="display:none">
-  <img src="res/images/index-img1.jpg" height="250px" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>Farhathul Tasfiya</b></h4> 
-    <p>Software Engineer</p> 
-  </div>
-</div>
 
+<!-- Image Slider -->
 <script>
+var myImage = document.getElementById('img-1');
 
-document.getElementById('Test-1').onclick = function(){
-	var imgs = document.getElementById('img-1');
-	if(imgs.src=='res/images/index-img.jpg')
-	{
-		imgs.src='res/images/index-img1.jpg';
-		alert(1);
-	}
-	else
-	{
-		imgs.src='res/images/index-img.jpg';
-		alert(2);
+myImage.onclick = function() {
+    var mySrc = myImage.getAttribute('src');
+    if(mySrc === 'res/images/index-img.jpg') {
+		myImage.setAttribute ('src','res/images/index-img1.jpg');
+    } else if(mySrc === 'res/images/index-img1.jpg'){
+		myImage.setAttribute ('src','res/images/index-img2.jpg');
+    }
+	else{
+		myImage.setAttribute ('src','res/images/index-img.jpg');
 	}
 }
 </script>
+<!-- Image Slider -->
+
+<!-- Page Loader -->
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("myLoader").style.display = "none";
+  document.getElementById("myContainer").style.display = "block";
+}
+
+window.onload = function(){
+myFunction();
+}
+
+</script>
+<!-- Page Loader -->
 </body>
 </html> 
