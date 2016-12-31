@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <style>
 .card {
@@ -32,7 +33,7 @@ font-family: calibri;
 
 <h2></h2>
 
-<div class="card">
+<div class="card" id="Test-1">
   <img src="res/images/index-img.jpg" height="250px" alt="Avatar" style="width:100%">
   <div class="container">
     <h4><b>Juvai Farhana</b></h4> 
@@ -47,6 +48,12 @@ font-family: calibri;
     <p>Software Engineer</p> 
   </div>
 </div>
-
+<script>
+$(document).ready(function(){
+    $("#Test-1").click(function(){
+        alert("HelloWorld")
+    });
+});
+</script>
 </body>
 </html> 
