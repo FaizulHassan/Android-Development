@@ -5,7 +5,6 @@
 <script src="script/jquery-3.1.1.min.js"></script>
 
 <style>
-
 .header{
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 	width: 100%;
@@ -18,24 +17,19 @@
     width: 100%;
     border-radius: 5px;	
 }
-
 .card:hover {
     box-shadow: 10px 8px 20px 5px rgba(0,0,0,0.2);
 }
-
 img {
     border-radius: 5px 5px 0 0;
 }
-
 .container {
     padding: 2px 16px;
 	text-align: center;
 }
-
 body{
 font-family: calibri;
 }
-
 </style>
 <style>
 .loadersmall {
@@ -54,12 +48,10 @@ font-family: calibri;
   margin: auto;
   
 }
-
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -84,13 +76,12 @@ font-family: calibri;
 <!-- Image Slider -->
 <script>
 var myImage = document.getElementById('img-1');
-
 myImage.onclick = function() {
     var mySrc = myImage.getAttribute('src');
     if(mySrc === 'res/images/index-img.jpg') {
 		myImage.setAttribute ('src','res/images/index-img1.jpg');
     } else if(mySrc === 'res/images/index-img1.jpg'){
-		myImage.setAttribute ('src','res/images/index-img2.jpg');
+		myImage.setAttribute ('src','res/images/index-img2.jpg.jpg');
     }
 	else{
 		myImage.setAttribute ('src','res/images/index-img.jpg');
@@ -102,20 +93,16 @@ myImage.onclick = function() {
 <!-- Page Loader -->
 <script>
 var myVar;
-
 function myFunction() {
     myVar = setTimeout(showPage, 2000);
 }
-
 function showPage() {
   document.getElementById("myLoader").style.display = "none";
   document.getElementById("myContainer").style.display = "block";
 }
-
 window.onload = function(){
 myFunction();
 }
-
 </script>
 <!-- Page Loader -->
 </body>
